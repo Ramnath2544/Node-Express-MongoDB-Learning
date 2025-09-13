@@ -24,12 +24,19 @@ const server = http.createServer((req, res) => {
     res.write("</body>");
     res.write("</html>");
     return res.end();
+  } else if (
+    req.url.toLowerCase() === "/submit-details" &&
+    req.method == "POST"
+  ) {
+    fs.writeFileSync("user.txt", "MERN");
+    res.statusCode = 302;
+    res.setHeader("Location", "/");
   }
-  res.setHeader('Content-Type', 'text/html');
-  res.write('<html>');
-  res.write('<head><title>Complete Coding</title></head>');
-  res.write('<body><h1>Like / Share / Subscribe</h1></body>');
-  res.write('</html>');
+  res.setHeader("Content-Type", "text/html");
+  res.write("<html>");
+  res.write("<head><title>Complete Coding</title></head>");
+  res.write("<body><h1>Like / Share / Subscribe</h1></body>");
+  res.write("</html>");
   res.end();
 });
 
