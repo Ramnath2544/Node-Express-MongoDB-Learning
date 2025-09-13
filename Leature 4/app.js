@@ -1,27 +1,32 @@
-const http = require("http");
+const http = require('http');
 
 const server = http.createServer((req, res) => {
-  res.setHeader("Content-Type", "text/html");
-  res.write("<html>");
-  res.write("<head><title>Complete Coding</title></head>");
+  console.log(req.url, req.method, req.headers);
 
-  if (req.url === "/") {
-    res.write("<h1>Welcome to Home Page</h1>");
-    res.end();
-  } else if (req.url.toLowerCase() === "/products") {
-    res.write("<h1>Products</h1>");
-    res.end();
-  } else {
-
-  res.write("<body><h1>Like / Share / Subscribe</h1></body>");
-  res.write("</html>");
-  res.end();
+  if (req.url === '/') {
+    res.setHeader('Content-Type', 'text/html');
+    res.write('<html>');
+    res.write('<head><title>Complete Coding</title></head>');
+    res.write('<body><h1>Welcome to Home</h1></body>');
+    res.write('</html>');
+    return res.end();
+  } else if (req.url === '/products') {
+    res.setHeader('Content-Type', 'text/html');
+    res.write('<html>');
+    res.write('<head><title>Complete Coding</title></head>');
+    res.write('<body><h1>Checkout our products</h1></body>');
+    res.write('</html>');
+    return res.end();
   }
-
-  // process.exit(); //Stops event loop
+  res.setHeader('Content-Type', 'text/html');
+  res.write('<html>');
+  res.write('<head><title>Complete Coding</title></head>');
+  res.write('<body><h1>Like / Share / Subscribe</h1></body>');
+  res.write('</html>');
+  res.end();
 });
 
 const PORT = 3000;
 server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server running on address http://localhost:${PORT}`);
 });
