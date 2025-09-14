@@ -37,6 +37,12 @@ const server = http.createServer((req, res) => {
     req.on("end", () => {
       const parsedBody = Buffer.concat(body).toString();
       console.log(parsedBody);
+      const params = new URLSearchParams(parsedBody);
+      const bodyObject = {};
+      for (const [key, val] of params.entries()) {
+        bodyObject[key] = val;
+      }
+      console.log(bodyObject)
     });
 
     fs.writeFileSync("user.txt", "MERN");
