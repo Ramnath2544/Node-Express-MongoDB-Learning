@@ -38,14 +38,15 @@ const server = http.createServer((req, res) => {
       const parsedBody = Buffer.concat(body).toString();
       console.log(parsedBody);
       const params = new URLSearchParams(parsedBody);
-      const bodyObject = {};
-      for (const [key, val] of params.entries()) {
-        bodyObject[key] = val;
-      }
-      console.log(bodyObject)
+      // const bodyObject = {};
+      // for (const [key, val] of params.entries()) {
+      //   bodyObject[key] = val;
+      // }
+      const bodyObject = Object.fromEntries(params);
+      console.log(bodyObject);
+      fs.writeFileSync("user.txt", JSON.stringify(bodyObject));
     });
 
-    fs.writeFileSync("user.txt", "MERN");
     res.statusCode = 302;
     res.setHeader("Location", "/");
   }
