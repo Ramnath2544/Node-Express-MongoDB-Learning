@@ -48,12 +48,12 @@ const userRequestHandler = (req, res) => {
       });
     });
   } else {
-  res.setHeader("Content-Type", "text/html");
-  res.write("<html>");
-  res.write("<head><title>Complete Coding</title></head>");
-  res.write("<body><h1>Like / Share / Subscribe</h1></body>");
-  res.write("</html>");
-  res.end();
+    res.setHeader("Content-Type", "text/html");
+    res.write("<html>");
+    res.write("<head><title>Complete Coding</title></head>");
+    res.write("<body><h1>Like / Share / Subscribe</h1></body>");
+    res.write("</html>");
+    res.end();
   }
 };
 

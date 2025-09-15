@@ -1,4 +1,3 @@
-
 const fs = require("fs");
 
 const userRequestHandler = (req, res) => {
@@ -59,5 +58,3 @@ const userRequestHandler = (req, res) => {
 };
 
 module.exports = userRequestHandler;
-
-
