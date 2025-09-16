@@ -1,5 +1,5 @@
 const logical = () => {
-  // const num = 5;
+  // let num = 5;
   // if(num = 10){
   //   console.log(num);
   // }
