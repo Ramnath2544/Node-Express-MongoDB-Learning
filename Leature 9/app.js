@@ -1,6 +1,3 @@
-//Core Modules
-const http = require('http');
-
 //External Module
 const express = require('express');
 
@@ -19,9 +16,7 @@ app.use((req, res, next) => {
   res.send("<h1>Welcome to Express</h1>")
 });
 
-const server = http.createServer(app);
-
 const PORT = 3000;
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server running on address http://localhost:${PORT}`);
 });
