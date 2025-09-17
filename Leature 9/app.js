@@ -6,13 +6,18 @@ const userRequestHandler = require('./user');
 
 const app = express();
 
-app.use((req, res, next) => {
+app.get("/", (req, res, next) => {
   console.log('Came in first middleware', req.url, req.method);
   next();
 });
 
-app.use((req, res, next) => {
+app.post("/submit-details",(req, res, next) => {
   console.log('Came in second middleware', req.url, req.method);
+  res.send("<h1>Welcome to Express</h1>")
+});
+
+app.use("/",(req, res, next) => {
+  console.log('Came in third middleware', req.url, req.method);
   res.send("<h1>Welcome to Express</h1>")
 });
 
