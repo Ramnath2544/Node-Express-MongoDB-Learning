@@ -1,5 +1,6 @@
 //External Module
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -31,7 +32,14 @@ app.get('/contact-us', (req, res, next) => {
 });
 
 app.post('/contact-us', (req, res, next) => {
-  console.log('Handling /contact-us for POST', req.url, req.method);
+  console.log('First handling', req.url, req.method, req.body); //req.body won't get data till yet
+  next();
+});
+
+app.use(bodyParser.urlencoded());
+
+app.post('/contact-us', (req, res, next) => {
+  console.log('Handling /contact-us for POST', req.url, req.method, req.body); // here req.body is added
   res.send(`<h1>We will contact you shortly</h1>`);
 });
 
