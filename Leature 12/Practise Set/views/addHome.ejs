@@ -1,18 +1,25 @@
 <%- include('partials/head') %>
   </head>
+
   <body>
     <header>
       <h1>Register your home here:</h1>
     </header>
     <main>
       <form action="/host/add-home" method="POST">
-        <input
-          type="text"
-          name="homeName"
-          placeholder="Enter home name of your house"
-        />
+        <input type="text" name="homeName" placeholder="Enter Home Name" />
+        <br />
+        <input type="text" name="price" placeholder="Price Per Night" />
+        <br />
+        <input type="text" name="location" placeholder="Location" />
+        <br />
+        <input type="text" name="rating" placeholder="Rating" />
+        <br />
+        <input type="text" name="photoURL" placeholder="Enter Photo URL" />
+        <br />
         <input type="submit" />
       </form>
     </main>
   </body>
-</html>
+
+  </html>
