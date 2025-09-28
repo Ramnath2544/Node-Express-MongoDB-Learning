@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "tailwind": "tailwindcss -i ./views/input.css -o ./public/output.css --watch",
+    "start": "nodemon app.js & npm run tailwind"
   },
   "keywords": [],
   "author": "",
@@ -12,12 +13,13 @@
   "description": "",
   "dependencies": {
     "body-parser": "^2.2.0",
-    "bootstrap": "^5.3.8",
     "ejs": "^3.1.10",
-    "express": "^5.1.0",
-    "react-icons": "^5.5.0"
+    "express": "^5.1.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "autoprefixer": "^10.4.20",
+    "nodemon": "^3.1.10",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13"
   }
 }
