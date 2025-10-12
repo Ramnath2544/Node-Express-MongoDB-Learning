@@ -8,7 +8,7 @@
           Here are your favourites:
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <% registeredHomes.forEach(home=> { %>
+          <% favouriteHomes.forEach(home=> { %>
             <div
               class="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 w-full max-w-sm hover:-translate-y-1 ring-1 ring-gray-100 hover:ring-red-200">
               <img src="<%= home.photoUrl %>" alt="<%= home.houseName %>"
@@ -39,9 +39,6 @@
                       </div>
                   </div>
                 </div>
-                <button
-                  class="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-lg transition duration-200 shadow-sm hover:shadow-md">Book
-                  Now</button>
               </div>
             </div>
             <% }) %>
