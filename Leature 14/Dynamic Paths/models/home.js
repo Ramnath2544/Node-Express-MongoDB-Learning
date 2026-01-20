@@ -51,11 +51,11 @@ module.exports = class Home {
     });
   }
 
-  static deleteById(homeId, callback) {
+  static deleteById(id, callback) {
     this.fetchAll((homes) => {
       homes = homes.filter((home) => home.id !== homeId);
       fs.writeFile(homeDataPath, JSON.stringify(homes), (error) => {
-        Favourite.deleteById(homes, callback);
+        Favourite.deleteById(id, callback);
       });
     });
   }
