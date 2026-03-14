@@ -40,16 +40,16 @@ exports.getHostHomes = (req, res, next) => {
 exports.postAddHome = (req, res, next) => {
   // const home = new Home(req.body.houseName, req.body.price, req.body.location, req.body.rating, req.body.photoUrl);
 
-  const { houseName, price, location, rating, photoUrl } = req.body;
-  const home = new Home(houseName, price, location, rating, photoUrl);
+  const { houseName, price, location, rating, photoUrl, description } = req.body;
+  const home = new Home(houseName, price, location, rating, photoUrl, description);
   home.save();
 
   res.redirect('/host/host-home-list');
 };
 
 exports.postEditHome = (req, res, next) => {
-  const { id, houseName, price, location, rating, photoUrl } = req.body;
-  const home = new Home(houseName, price, location, rating, photoUrl);
+  const { id, houseName, price, location, rating, photoUrl, description } = req.body;
+  const home = new Home(houseName, price, location, rating, photoUrl, description, id);
   home.id = id;
   home.save();
 
