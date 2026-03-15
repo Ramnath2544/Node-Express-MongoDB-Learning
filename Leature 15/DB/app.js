@@ -10,10 +10,6 @@ const hostRouter = require('./routes/hostRouter');
 const rootDir = require('./utils/pathUtil');
 const errorsController = require('./controllers/error');
 
-
-
-
-
 const app = express();
 
 app.set('view engine', 'ejs');
