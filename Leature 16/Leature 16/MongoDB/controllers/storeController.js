@@ -13,7 +13,7 @@ exports.getIndex = (req, res, next) => {
 
 exports.getHomes = (req, res, next) => {
   Home.fetchAll().then(([registeredHomes]) => {
-    res.render('store/home-list', {
+    res.render('store/index', {
       registeredHomes: registeredHomes,
       pageTitle: 'Homes List',
       currentPage: 'Home',
